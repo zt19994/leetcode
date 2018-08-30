@@ -4,16 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 设计一个支持push、pop、top和在常量时间中检索最小元素的堆栈。
+ *
  * @author zhongtao on 2018/8/21
  */
-public class MinStack {
+public class MinStack1 {
 
     List<Integer> list;
 
     int min;
 
-    /** initialize your data structure here. */
-    public MinStack() {
+    /**
+     * initialize your data structure here.
+     */
+    public MinStack1() {
         list = new ArrayList<>();
     }
 
@@ -26,13 +30,13 @@ public class MinStack {
     }
 
     public int top() {
-        return list.get(list.size() -1);
+        return list.get(list.size() - 1);
     }
 
     public int getMin() {
         min = top();
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) < min){
+            if (list.get(i) < min) {
                 min = list.get(i);
             }
         }

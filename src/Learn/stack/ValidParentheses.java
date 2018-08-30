@@ -1,4 +1,4 @@
-package LeetCode;
+package Learn.stack;
 
 import org.junit.Test;
 
@@ -7,10 +7,10 @@ import java.util.Map;
 import java.util.Stack;
 
 /**
- * 题目20 有效的括号
+ * 题目20 有效的括号 使用stack
  * @author zhongtao on 2018/8/15
  */
-public class Solution_20 {
+public class ValidParentheses {
 
     public static boolean isValid(String s) {
         Map<Object, Object> map = new HashMap<>();
