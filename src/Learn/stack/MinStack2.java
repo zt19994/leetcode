@@ -6,10 +6,20 @@ import java.util.Stack;
 
 /**
  * 设计一个支持push、pop、top和在常量时间中检索最小元素的堆栈。
+ * 使用stack来创建，效率提高了
  *
  * @author zhongtao on 2018/8/21
  */
 public class MinStack2 {
+
+    /**
+     * Your MinStack object will be instantiated and called as such:
+     * MinStack obj = new MinStack();
+     * obj.push(x);
+     * obj.pop();
+     * int param_3 = obj.top();
+     * int param_4 = obj.getMin();
+     */
     long min;
     Stack<Long> stack;
 
@@ -22,8 +32,12 @@ public class MinStack2 {
             stack.push(0L);
             min = x;
         } else {
-            stack.push(x - min);//Could be negative if min value needs to change
-            if (x < min) min = x;
+            //Could be negative if min value needs to change
+            stack.push(x - min);
+            //存储的值小于min，则min改变
+            if (x < min){
+                min = x;
+            }
         }
     }
 
@@ -32,7 +46,10 @@ public class MinStack2 {
 
         long pop = stack.pop();
 
-        if (pop < 0) min = min - pop;//If negative, increase the min value
+        if (pop < 0) {
+            //If negative, increase the min value
+            min = min - pop;
+        }
 
     }
 
@@ -66,11 +83,3 @@ public class MinStack2 {
     }
 }
 
-/**
- * Your MinStack object will be instantiated and called as such:
- * MinStack obj = new MinStack();
- * obj.push(x);
- * obj.pop();
- * int param_3 = obj.top();
- * int param_4 = obj.getMin();
- */

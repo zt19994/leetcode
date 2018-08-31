@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * 设计一个支持push、pop、top和在常量时间中检索最小元素的堆栈。
+ * 使用for循环来找最小值，效率低
  *
  * @author zhongtao on 2018/8/21
  */

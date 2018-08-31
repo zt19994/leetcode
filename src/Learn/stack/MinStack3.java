@@ -12,6 +12,7 @@ public class MinStack3 {
     class Node {
         public int value;
         public int min;
+        //下一个节点
         public Node next;
 
         public Node(int value, int min) {
@@ -40,8 +41,7 @@ public class MinStack3 {
         if (top == null) {
             return;
         } else {
-            Node next = top.next;
-            top = next;
+            top = top.next;
         }
     }
 

@@ -8,6 +8,7 @@ import java.util.Stack;
 
 /**
  * 题目20 有效的括号 使用stack
+ * 左右括号要对应
  *
  * @author zhongtao on 2018/8/15
  */
