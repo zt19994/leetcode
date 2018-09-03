@@ -18,8 +18,13 @@
 1. FIFO and LIFO
 2. queue and stack
 3. BFS and DFS
-#### 三、BinaryTree
-#### 四、LinkedList
+#### 三、LinkedList
+&emsp;&emsp;有两种链表：单链表和双链表。
+##### 1、单链表介绍
+&emsp;&emsp;与数组类似，链表也是一个线性数据结构。一个单链表中每个节点不仅包含值，还有一个指向下一个节点的参考字段。通过这种方式，单链表组织了一个序列中的所有节点。
+#### 四、BinaryTree
+
 #### 五、BinarySearch
+
 #### 六、HashTable
 

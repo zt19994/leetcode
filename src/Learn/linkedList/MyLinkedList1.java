@@ -1,6 +1,7 @@
 package Learn.linkedList;
 
 /**
+ * 设计链表 单链表
  * @author zhongtao on 2018/8/27
  */
 public class MyLinkedList1 {

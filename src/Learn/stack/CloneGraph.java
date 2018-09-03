@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * 克隆图
+ * 克隆无向图
  *
  * @author zhongtao on 2018/8/30
  */

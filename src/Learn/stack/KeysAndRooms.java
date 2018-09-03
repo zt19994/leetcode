@@ -6,6 +6,7 @@ import java.util.*;
 
 /**
  * 钥匙和房间
+ *
  * @author zhongtao on 2018/9/1
  */
 public class KeysAndRooms {
@@ -15,22 +16,22 @@ public class KeysAndRooms {
      * 2、set存储访问过的房间
      * 3、当访问房间次数小于房间总数，但是key没有时，返回false
      */
-    public boolean canVisitAllRooms(List<List<Integer>> rooms){
+    public boolean canVisitAllRooms(List<List<Integer>> rooms) {
         Stack<Integer> keyStack = new Stack<>();
         Set<Integer> visitStack = new HashSet<>();
         int idx = 0;
         keyStack.push(idx);
         visitStack.add(idx);
         int countRoom = rooms.size();
-        while (countRoom>0){
-            if (keyStack.isEmpty()){
+        while (countRoom > 0) {
+            if (keyStack.isEmpty()) {
                 return false;
             }
             Integer pop = keyStack.pop();
             List<Integer> curlist = rooms.get(pop);
             visitStack.add(pop);
             for (Integer integer : curlist) {
-                if (!visitStack.contains(integer)){
+                if (!visitStack.contains(integer)) {
                     keyStack.push(integer);
                 }
             }
@@ -52,6 +53,7 @@ public class KeysAndRooms {
         }
         return true;
     }
+
     public void dfs(boolean[] v, int cur, List<List<Integer>> rooms) {
         if (v[cur] == true) {
             return;
@@ -67,7 +69,7 @@ public class KeysAndRooms {
      * 测试
      */
     @Test
-    public void test(){
+    public void test() {
         //{{1},{2},{3},{}}
         List<List<Integer>> rooms = new ArrayList<>();
         List<Integer> list1 = new ArrayList<>();
@@ -88,8 +90,8 @@ public class KeysAndRooms {
      * 测试
      */
     @Test
-    public void test1(){
-        //{{1},{2},{3},{}}
+    public void test1() {
+        //[[1,3][3,0,1][2][0]]
         List<List<Integer>> rooms = new ArrayList<>();
         List<Integer> list1 = new ArrayList<>();
         list1.add(1);
@@ -113,8 +115,8 @@ public class KeysAndRooms {
      * 测试
      */
     @Test
-    public void test2(){
-        // [[1,3],[1,4],[2,3,2,4,1],[],[4,3,2]]
+    public void test2() {
+        //[[2][][1]]
         List<List<Integer>> rooms = new ArrayList<>();
         List<Integer> list1 = new ArrayList<>();
         list1.add(2);
@@ -131,7 +133,7 @@ public class KeysAndRooms {
      * 测试
      */
     @Test
-    public void test3(){
+    public void test3() {
         // [[1,3],[1,4],[2,3,2,4,1],[],[4,3,2]]
         List<List<Integer>> rooms = new ArrayList<>();
         List<Integer> list1 = new ArrayList<>();

@@ -1,7 +1,7 @@
 package Learn.linkedList;
 
 /**
- * 设计链表
+ * 设计链表 双链表
  *
  * @author zhongtao on 2018/8/27
  */

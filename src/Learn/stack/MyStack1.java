@@ -5,6 +5,7 @@ import java.util.Queue;
 
 /**
  * 使用 queue 实现 stack
+ *
  * @author zhongtao on 2018/8/31
  */
 public class MyStack1 {
@@ -14,7 +15,7 @@ public class MyStack1 {
     // Push element x onto stack.
     public void push(int x) {
         q.add(x);
-        for(int i = 1; i < q.size(); i ++) {
+        for (int i = 1; i < q.size(); i++) {
             //rotate the queue to make the tail be the head 将队列反转
             q.add(q.poll());
         }

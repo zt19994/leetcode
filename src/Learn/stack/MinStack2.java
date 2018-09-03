@@ -35,7 +35,7 @@ public class MinStack2 {
             //Could be negative if min value needs to change
             stack.push(x - min);
             //存储的值小于min，则min改变
-            if (x < min){
+            if (x < min) {
                 min = x;
             }
         }
