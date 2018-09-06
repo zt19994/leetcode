@@ -9,7 +9,7 @@ public class LinkedListCycle {
 
     class ListNode {
         int val;
-        DetectCycle.ListNode next;
+        ListNode next;
 
         ListNode(int x) {
             val = x;
