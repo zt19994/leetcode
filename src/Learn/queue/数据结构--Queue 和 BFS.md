@@ -14,7 +14,7 @@
 &emsp;&emsp;在一个特定的问题中，在进行BFS之前确定节点和边是很重要的。通常，节点是一个实际的节点或状态，而边是一个实际的边或一个可能的转换方式。
 
 伪代码实现：
-```
+```java
 /**
  * Return the length of the shortest path between root and target node.
  */
@@ -44,7 +44,7 @@ int BFS(Node root, Node target) {
 2. 在每一个外部while循环之后，我们离根节点又远了一步。变量step表示了距离根节点和正在访问的当前节点的距离。
 
 &emsp;&emsp;有时，确保我们从不访问节点两次是很重要的。否则，我们可能会陷入无限循环中。如果是这样，我们可以在上面的代码中添加一个散列集来解决这个问题。下面是修改后的伪代码：
-```
+```java
 /**
  * Return the length of the shortest path between root and target node.
  */
