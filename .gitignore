@@ -16,7 +16,7 @@
 
 #idea
 .idea/
-out/
+/out/
 /idea/
 /target/
 *.ipr
