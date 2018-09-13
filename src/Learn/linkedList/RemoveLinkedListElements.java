@@ -50,7 +50,11 @@ public class RemoveLinkedListElements {
         listNode.next.next.next.next.next.next = new ListNode(6);
         ListNode removeElements = removeElements(listNode, 6);
 
-        System.out.println(removeElements);
+        while (removeElements!=null){
+            System.out.print(removeElements.val + " ");
+            removeElements = removeElements.next;
+        }
+        System.out.println();
     }
 
 
@@ -65,8 +69,7 @@ public class RemoveLinkedListElements {
         listNode.next.next.next = new ListNode(3);
         listNode.next.next.next.next = new ListNode(4);
 
-        ListNode temp = listNode;
-        temp.next = temp.next.next;
+        listNode.next = listNode.next.next;
 
         System.out.println(listNode);
 

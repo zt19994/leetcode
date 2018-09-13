@@ -13,7 +13,7 @@ public class MyCircularQueue {
     private int p_start = 0;
     //尾部索引
     private int p_tail = -1;
-    //长度
+    //存储长度
     private int len = 0;
 
     /**

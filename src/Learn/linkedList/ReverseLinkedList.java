@@ -53,7 +53,11 @@ public class ReverseLinkedList {
 
         ListNode reverseList = reverseList(listNode);
 
-        System.out.println(reverseList);
+        while (reverseList!=null){
+            System.out.print(reverseList.val + " ");
+            reverseList = reverseList.next;
+        }
+        System.out.println();
 
     }
 

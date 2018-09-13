@@ -9,6 +9,12 @@ import java.util.*;
  */
 public class OpenLock {
 
+    /**
+     * 容易理解
+     * @param deadends
+     * @param target
+     * @return
+     */
     public int openLock(String[] deadends, String target) {
         Queue<String> queue = new LinkedList<>();
         // 无效的死亡密码

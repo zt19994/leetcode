@@ -5,6 +5,8 @@ import org.junit.Test;
 import java.util.*;
 
 /**
+ * Perfect Squares 完全平方数
+ *
  * @author zhongtao on 2018/8/29
  */
 public class PerfectSquares {
@@ -82,7 +84,7 @@ public class PerfectSquares {
      * 测试
      */
     @Test
-    public void test1(){
+    public void test1() {
         System.out.println(numSquares2(20));
         System.out.println(Math.floor(8.9));
     }
