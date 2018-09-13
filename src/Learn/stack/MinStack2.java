@@ -34,7 +34,7 @@ public class MinStack2 {
         } else {
             //Could be negative if min value needs to change
             stack.push(x - min);
-            //存储的值小于min，则min改变
+            //存储的值小于min，则min改变 即假设 min = 2， x = 1 ， x - min = -1 < 0, min变为1
             if (x < min) {
                 min = x;
             }
@@ -48,6 +48,7 @@ public class MinStack2 {
 
         if (pop < 0) {
             //If negative, increase the min value
+            //如果是负数，增大最小值，即找到上一个最小值
             min = min - pop;
         }
 

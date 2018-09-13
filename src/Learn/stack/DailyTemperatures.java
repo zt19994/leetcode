@@ -1,5 +1,7 @@
 package Learn.stack;
 
+import org.junit.Test;
+
 import java.util.Stack;
 
 /**
@@ -29,7 +31,7 @@ public class DailyTemperatures {
                     days[i] = j - i;
                     break;
                 } else if (j == temperatures.length - 1) {
-                    days[i] = (0);
+                    days[i] = 0;
                 }
             }
         }
@@ -46,6 +48,7 @@ public class DailyTemperatures {
         for (int i = 0; i < temperatures.length; i++) {
             while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
                 Integer val = stack.pop();
+                //升高温度天索引 - 目标天索引
                 result[val] = i - val;
             }
             stack.push(i);
@@ -69,5 +72,16 @@ public class DailyTemperatures {
             stack[++top] = i;
         }
         return result;
+    }
+
+
+    /**
+     * 测试
+     */
+    @Test
+    public void test(){
+        int[] temperatures = {73, 74, 75, 71, 69, 72, 76, 73};
+        int[] ints = daliyTemperatures2(temperatures);
+        System.out.println(ints);
     }
 }
