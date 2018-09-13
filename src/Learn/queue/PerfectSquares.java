@@ -13,7 +13,7 @@ public class PerfectSquares {
 
 
     /**
-     * BFS
+     * BFS 减法
      */
     public int numSquares(int n) {
         Queue<Integer> queue = new LinkedList<>();
@@ -26,6 +26,7 @@ public class PerfectSquares {
             for (int i = 0; i < size; i++) {
                 int curr = queue.poll();
                 if (!set.add(curr)) continue;
+                //循环减去完全平方数
                 for (int j = 1; j <= Math.sqrt(curr); j++) {
                     int next = curr - j * j;
                     if (next == 0) return step;
@@ -36,6 +37,10 @@ public class PerfectSquares {
         return 0;
     }
 
+    /**
+     * 加法 计算每个数的最小完全平法数之和
+     * [0,1,2,3,1,2,3,4,2,1,......]
+     */
     public int numSquares1(int n) {
         int[] dp = new int[n + 1];
         Arrays.fill(dp, Integer.MAX_VALUE);
