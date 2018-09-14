@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * 克隆无向图
+ * 克隆一个无向图。图中的每个节点都包含一个标签和它的邻居列表
  *
  * @author zhongtao on 2018/8/30
  */
@@ -43,5 +43,32 @@ public class CloneGraph {
             clone.neighbors.add(clone(neighbor));
         }
         return clone;
+    }
+
+
+    /**
+     * 克隆原理一样
+     */
+    public UndirectedGraphNode cloneGraph1(UndirectedGraphNode node) {
+
+        if (node == null) return null;
+        HashMap<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
+        return helper(map, node);
+    }
+
+    private UndirectedGraphNode helper(HashMap<UndirectedGraphNode, UndirectedGraphNode> map, UndirectedGraphNode node) {
+
+        UndirectedGraphNode n = new UndirectedGraphNode(node.label);
+        map.put(node, n);
+        for (UndirectedGraphNode val : node.neighbors) {
+            if (map.containsKey(val)) {
+                n.neighbors.add(map.get(val));
+            } else {
+                UndirectedGraphNode tmp = helper(map, val);
+                n.neighbors.add(tmp);
+            }
+        }
+
+        return n;
     }
 }
