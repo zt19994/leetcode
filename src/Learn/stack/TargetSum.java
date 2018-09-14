@@ -19,6 +19,7 @@ public class TargetSum {
     public int subsetSum(int[] nums, int s) {
         int[] dp = new int[s + 1];
         dp[0] = 1;
+        //怎么计算的？
         for (int n : nums)
             for (int i = s; i >= n; i--)
                 dp[i] += dp[i - n];
@@ -50,7 +51,7 @@ public class TargetSum {
     @Test
     public void test() {
         int[] nums = {1, 2, 3, 4, 5};
-        int targetSumWays = findTargetSumWays(nums, 1);
+        int targetSumWays = findTargetSumWays(nums, 3);
         System.out.println(targetSumWays);
     }
 
@@ -62,5 +63,13 @@ public class TargetSum {
         int[] nums = {1, 1, 1, 1, 1};
         int targetSumWays = findTargetSumWays1(nums, 3);
         System.out.println(targetSumWays);
+    }
+
+    /**
+     * 测试位运算
+     */
+    @Test
+    public void test2(){
+        System.out.println(15>>>1);
     }
 }
