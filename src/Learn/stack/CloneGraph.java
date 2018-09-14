@@ -24,6 +24,9 @@ public class CloneGraph {
 
     private HashMap<Integer, UndirectedGraphNode> map = new HashMap<>();
 
+    /**
+     * 克隆无向图 递归法
+     */
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
         return clone(node);
     }
