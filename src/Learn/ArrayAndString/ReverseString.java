@@ -9,6 +9,9 @@ import org.junit.Test;
  */
 public class ReverseString {
 
+    /**
+     * 双指针
+     */
     public String reverseString(String s){
         char[] chars = s.toCharArray();
         int i = 0;
