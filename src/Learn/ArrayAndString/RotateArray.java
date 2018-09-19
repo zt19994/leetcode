@@ -53,7 +53,7 @@ public class RotateArray {
     }
 
     /**
-     * 测试
+     * 测试反向数组
      */
     @Test
     public void test() {
