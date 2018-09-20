@@ -8,6 +8,8 @@ import java.util.Objects;
 
 /**
  * 把一个字符串的单词反过来
+ * <p>
+ * 给定一个输入字符串，用word来反转字符串。
  *
  * @author zhongtao on 2018/9/20
  */
