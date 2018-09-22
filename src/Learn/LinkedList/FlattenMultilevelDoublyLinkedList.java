@@ -1,7 +1,10 @@
 package Learn.LinkedList;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Consumer;
 
 /**
  * 将多级双链表拉平
@@ -61,7 +64,7 @@ public class FlattenMultilevelDoublyLinkedList {
 
 
     /**
-     * 迭代法
+     * 迭代法 理解？
      */
     public Node flatten1(Node head) {
         if (head == null) return null;
@@ -72,6 +75,7 @@ public class FlattenMultilevelDoublyLinkedList {
         Node n = head;
         while (n != null) {
             if (n.child != null) {
+                //获取有子集节点的下一个节点
                 Node temp = n.next;
                 n.next = helper(n.child, map);
                 n.next.prev = n;
