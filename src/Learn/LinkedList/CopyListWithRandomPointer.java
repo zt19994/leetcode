@@ -77,8 +77,8 @@ public class CopyListWithRandomPointer {
     public RandomListNode copyRandomList2(RandomListNode head) {
         RandomListNode iter = head, next;
 
-        // First round: make copy of each node,
-        // and link them together side-by-side in a single list.
+        // First round: make copy of each node, 第一轮：复制每个节点，
+        // and link them together side-by-side in a single list. 并将它们并列在一个列表中。
         while (iter != null) {
             next = iter.next;
 
@@ -89,7 +89,7 @@ public class CopyListWithRandomPointer {
             iter = next;
         }
 
-        // Second round: assign random pointers for the copy nodes.
+        // Second round: assign random pointers for the copy nodes. 第二轮：为复制节点分配随机指针。
         iter = head;
         while (iter != null) {
             if (iter.random != null) {
@@ -98,7 +98,7 @@ public class CopyListWithRandomPointer {
             iter = iter.next.next;
         }
 
-        // Third round: restore the original list, and extract the copy list.
+        // Third round: restore the original list, and extract the copy list. 第三轮：恢复原始列表，并提取副本列表。
         iter = head;
         RandomListNode pseudoHead = new RandomListNode(0);
         RandomListNode copy, copyIter = pseudoHead;
@@ -118,5 +118,42 @@ public class CopyListWithRandomPointer {
         }
 
         return pseudoHead.next;
+    }
+
+
+    public RandomListNode copyRandomList3(RandomListNode head) {
+        RandomListNode first = head;
+        RandomListNode second = head;
+
+        while( first!=null ){
+            second = first.next;
+            RandomListNode temp = new RandomListNode(first.label);
+            first.next = temp;
+            temp.next = second;
+            first = second;
+        }
+
+        first = head;
+
+        while( first!=null ){
+            if( first.random !=null ){
+                first.next.random = first.random.next;
+            }
+            first = first.next.next;
+        }
+
+        RandomListNode root = new RandomListNode(0);
+        RandomListNode rootTemp = root;
+
+        first = head;
+
+        while( first!=null ){
+            rootTemp.next = first.next;
+            first.next = first.next.next;
+            first = first.next;
+            rootTemp = rootTemp.next;
+        }
+
+        return root.next;
     }
 }
