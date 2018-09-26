@@ -15,7 +15,7 @@ public class ContainsDuplicate {
     /**
      * 将nums加入set中，通过比较长度判断是否有重复的数字
      */
-    public boolean containsDuplicate(int[] nums){
+    public boolean containsDuplicate(int[] nums) {
         Set<Integer> hashSet = new HashSet<>();
         int length = nums.length;
         for (int num : nums) {
@@ -30,7 +30,7 @@ public class ContainsDuplicate {
      * 测试
      */
     @Test
-    public void test(){
+    public void test() {
         int[] nums = {1, 2, 3, 1};
         System.out.println(containsDuplicate(nums));
     }
