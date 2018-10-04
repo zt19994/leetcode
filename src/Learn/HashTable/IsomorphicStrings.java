@@ -1,0 +1,31 @@
+package Learn.HashTable;
+
+import java.util.HashMap;
+
+/**
+ * 同构字符串
+ *
+ * @author zhongtao on 2018/10/4
+ */
+public class IsomorphicStrings {
+    public boolean isIsomorphic(String s, String t) {
+        if (s == null || s.length() <= 1) return true;
+        //字符一一对应，使用map来存储
+        HashMap<Character, Character> map = new HashMap<Character, Character>();
+        for (int i = 0; i < s.length(); i++) {
+            char a = s.charAt(i);
+            char b = t.charAt(i);
+            if (map.containsKey(a)) {
+                if (map.get(a).equals(b))
+                    continue;
+                else
+                    return false;
+            } else {
+                if (!map.containsValue(b))
+                    map.put(a, b);
+                else return false;
+            }
+        }
+        return true;
+    }
+}
