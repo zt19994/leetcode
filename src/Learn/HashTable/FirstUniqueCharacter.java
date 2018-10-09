@@ -12,11 +12,13 @@ import java.util.Map;
  */
 public class FirstUniqueCharacter {
     public int firstUniqChar1(String s) {
+        //1、设置26长度的数组
         int[] freq = new int[26];
+        //2、遍历字符串，在数组中加一
         for (int i = 0; i < s.length(); i++)
-            freq[s.charAt(i) - 'a']++;
+            freq[s.charAt(i) - 'a']++; //找到指定索引
         for (int i = 0; i < s.length(); i++)
-            if (freq[s.charAt(i) - 'a'] == 1)
+            if (freq[s.charAt(i) - 'a'] == 1)  //第一个唯一字符
                 return i;
         return -1;
     }
@@ -26,11 +28,11 @@ public class FirstUniqueCharacter {
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
             int[] stored = map.get(ch);
-            int pos = i;
-            if (stored == null)
-                stored = new int[]{1, pos};
-            else
+            if (stored == null){
+                stored = new int[]{1, i};
+            } else{
                 stored[0]++;
+            }
             map.put(ch, stored);
         }
 

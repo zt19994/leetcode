@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 两个数字的交集
+ * 两个数组的交集
  *
  * @author zhongtao on 2018/9/26
  */
@@ -38,7 +38,7 @@ public class IntersectionOfTwoArrays {
     @Test
     public void test(){
         int[] nums1 = {1, 2, 2, 1};
-        int[] nums2 = {2, 3};
+        int[] nums2 = {2, 3, 2};
         int[] intersection = intersection(nums1, nums2);
         for (int i : intersection) {
             System.out.println(i);
