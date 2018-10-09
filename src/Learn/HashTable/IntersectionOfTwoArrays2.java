@@ -13,18 +13,18 @@ public class IntersectionOfTwoArrays2 {
     public int[] intersect(int[] nums1, int[] nums2) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         List<Integer> result = new ArrayList<Integer>();
-        for (int i = 0; i < nums1.length; i++) {
-            if (map.containsKey(nums1[i])) {
-                map.put(nums1[i], map.get(nums1[i]) + 1);
+        for (int n1 : nums1) {
+            if (map.containsKey(n1)) {
+                map.put(n1, map.get(n1) + 1);
             } else {
-                map.put(nums1[i], 1);
+                map.put(n1, 1);
             }
         }
 
-        for (int i = 0; i < nums2.length; i++) {
-            if (map.containsKey(nums2[i]) && map.get(nums2[i]) > 0) {
-                result.add(nums2[i]);
-                map.put(nums2[i], map.get(nums2[i]) - 1);
+        for (int n2 : nums2) {
+            if (map.containsKey(n2) && map.get(n2) > 0) {
+                result.add(n2);
+                map.put(n2, map.get(n2) - 1);
             }
         }
 
@@ -32,7 +32,6 @@ public class IntersectionOfTwoArrays2 {
         for (int i = 0; i < result.size(); i++) {
             r[i] = result.get(i);
         }
-
         return r;
     }
 
