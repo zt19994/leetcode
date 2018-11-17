@@ -49,5 +49,7 @@ public class ContainsDuplicate2 {
         int[] nums = {1,2,3,1};
         boolean b = containsNearByDuplicate(nums, 3);
         System.out.println(b);
+        boolean b1 = containsNearbyDuplicate1(nums, 3);
+        System.out.println(b1);
     }
 }
