@@ -6,6 +6,7 @@
 &emsp;&emsp;数组可以有一个和多个维度，一维数组也叫线性数组。
 ##### 2、String
 &emsp;&emsp;字符串实际上是一个unicode字符数组。你可以执行几乎所有数组中包含的操作。
+
 #### 二、Queue and Stack
 ##### 1、Queue
 &emsp;&emsp;Queue 是一个 FIFO 数据结构：第一个元素被最先处理。有两个重要操作：enqueue 和 dequeue。我们使用两个指针和一个动态数组实现 queue。<br>
@@ -18,13 +19,20 @@
 1. FIFO and LIFO
 2. queue and stack
 3. BFS and DFS
+
 #### 三、LinkedList
 &emsp;&emsp;有两种链表：单链表和双链表。
 ##### 1、单链表介绍
 &emsp;&emsp;与数组类似，链表也是一个线性数据结构。一个单链表中每个节点不仅包含值，还有一个指向下一个节点的参考字段。通过这种方式，单链表组织了一个序列中的所有节点。
-#### 四、BinaryTree
 
-#### 五、BinarySearch
+#### 四、HashTable
+&emsp;&emsp;哈希表是一种使用散列函数来组织数据的数据结构，用来支持快速插入和搜索。
+哈希表有两种不同的类型：散列集(hash set)和散列映射(hash map)。
+1. hash set 是一种 set 数据结构的实现，它不存储重复的值。
+2. hash map 是一种 map 数据结构的实现，它用来存储键值对 (key,value)。
 
-#### 六、HashTable
+#### 五、BinaryTree
+
+#### 六、BinarySearch
+
 
