@@ -34,7 +34,9 @@ public class RandomizedSet {
      */
     public boolean insert(int val) {
         boolean contain = locations.containsKey(val);
-        if (contain) return false;
+        if (contain) {
+            return false;
+        }
         locations.put(val, nums.size());
         nums.add(val);
         return true;
@@ -45,7 +47,9 @@ public class RandomizedSet {
      */
     public boolean remove(int val) {
         boolean contain = locations.containsKey(val);
-        if (!contain) return false;
+        if (!contain) {
+            return false;
+        }
         int loc = locations.get(val);
         //判断是否是最后一个数
         if (loc < nums.size() - 1) { // not the last one than swap the last one with this val
