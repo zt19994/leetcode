@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 import static java.math.BigDecimal.ROUND_HALF_DOWN;
 
 /**
+ * BigDecimal 算法测试
+ *
  * @author zhongtao on 2018/8/20
  */
 public class BigDecimalTest {
@@ -15,7 +17,7 @@ public class BigDecimalTest {
      * 测试减法 参数类型是double类型，计算还是不精确
      */
     @Test
-    public void testSubtract1(){
+    public void testSubtract1() {
         BigDecimal b1 = new BigDecimal(0.05);
         BigDecimal b2 = new BigDecimal(0.01);
         System.out.println(b1.subtract(b2));
@@ -26,7 +28,7 @@ public class BigDecimalTest {
      * 测试减法，参数类型是String类型，计算结果精确
      */
     @Test
-    public void testSubtract2(){
+    public void testSubtract2() {
         BigDecimal b1 = new BigDecimal("0.05");
         BigDecimal b2 = new BigDecimal("0.01");
         System.out.println(b1.subtract(b2));
@@ -37,7 +39,7 @@ public class BigDecimalTest {
      * 测试乘法 参数类型是double类型，计算还是不精确
      */
     @Test
-    public void testMultiply1(){
+    public void testMultiply1() {
         BigDecimal b1 = new BigDecimal(0.05);
         BigDecimal b2 = new BigDecimal(0.01);
         System.out.println(b1.multiply(b2));
@@ -49,7 +51,7 @@ public class BigDecimalTest {
      * 测试乘法，参数类型是String类型，计算结果精确
      */
     @Test
-    public void testMultiply2(){
+    public void testMultiply2() {
         BigDecimal b1 = new BigDecimal("0.05");
         BigDecimal b2 = new BigDecimal("0.01");
         System.out.println(b1.multiply(b2));
@@ -60,7 +62,7 @@ public class BigDecimalTest {
      * 测试除法 参数类型是double类型
      */
     @Test
-    public void testDivide1(){
+    public void testDivide1() {
         BigDecimal b1 = new BigDecimal(0.1);
         BigDecimal b2 = new BigDecimal(0.03);
         System.out.println(b1.divide(b2));
@@ -71,7 +73,7 @@ public class BigDecimalTest {
      * 测试除法，参数类型是String类型
      */
     @Test
-    public void testDivide2(){
+    public void testDivide2() {
         BigDecimal b1 = new BigDecimal("0.1");
         BigDecimal b2 = new BigDecimal("0.03");
         System.out.println(b1.divide(b2));
@@ -83,7 +85,7 @@ public class BigDecimalTest {
      * 测试除法 参数类型是double类型
      */
     @Test
-    public void testDivide3(){
+    public void testDivide3() {
         BigDecimal b1 = new BigDecimal(0.1);
         BigDecimal b2 = new BigDecimal(0.03);
         System.out.println(b1.divide(b2, 10, ROUND_HALF_DOWN));
@@ -94,7 +96,7 @@ public class BigDecimalTest {
      * 测试除法，参数类型是String类型
      */
     @Test
-    public void testDivide4(){
+    public void testDivide4() {
         BigDecimal b1 = new BigDecimal("0.1");
         BigDecimal b2 = new BigDecimal("0.03");
         System.out.println(b1.divide(b2, 10, ROUND_HALF_DOWN));
