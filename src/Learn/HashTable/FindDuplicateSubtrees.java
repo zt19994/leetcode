@@ -40,7 +40,7 @@ public class FindDuplicateSubtrees {
         if (cur == null) {
             return "#";
         }
-        StringBuffer sb = new StringBuffer();
+        //StringBuffer sb = new StringBuffer();
         //sb.append(cur.val).append(",").append(postOrder(cur.left, map, res)).append(",").append(postOrder(cur.right, map, res));
         String serial = cur.val + "," + postOrder(cur.left, map, res) + "," + postOrder(cur.right, map, res);
         if (map.getOrDefault(serial, 0) == 1) {
