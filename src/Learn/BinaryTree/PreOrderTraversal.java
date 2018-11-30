@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * 前序遍历二叉树
+ * 前序遍历二叉树  根节点-->左子树-->右子树
  *
  * @author zhongtao on 2018/8/16
  */
@@ -22,10 +22,7 @@ public class PreOrderTraversal {
     }
 
     /**
-     * 迭代
-     *
-     * @param root
-     * @return
+     * 递归
      */
     public List<Integer> preorderTraversal1(TreeNode root) {
         List<Integer> list = new ArrayList<>();
@@ -54,9 +51,6 @@ public class PreOrderTraversal {
 
     /**
      * 使用stack LIFO
-     *
-     * @param root
-     * @return
      */
     public List<Integer> preorderTraversal3(TreeNode root) {
         List<Integer> ans = new ArrayList<>();

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * 后序遍历二叉树
+ * 后序遍历二叉树 左子树-->右子树-->根节点
  *
  * @author zhongtao on 2018/8/17
  */
