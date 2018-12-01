@@ -9,7 +9,7 @@ import java.util.Stack;
  *
  * @author zhongtao on 2018/8/18
  */
-public class BuildTree {
+public class InPostBuildTree {
 
     public class TreeNode {
         int val;
