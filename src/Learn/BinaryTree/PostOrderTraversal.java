@@ -12,7 +12,7 @@ import java.util.Stack;
  */
 public class PostOrderTraversal {
 
-    public class TreeNode {
+     class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;

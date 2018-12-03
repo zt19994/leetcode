@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class PreInBuildTree {
 
-    public class TreeNode {
+     class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;

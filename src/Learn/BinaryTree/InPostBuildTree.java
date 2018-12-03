@@ -11,7 +11,7 @@ import java.util.Stack;
  */
 public class InPostBuildTree {
 
-    public class TreeNode {
+     class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
