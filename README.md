@@ -32,7 +32,11 @@
 2. hash map 是一种 map 数据结构的实现，它用来存储键值对 (key,value)。
 
 #### 五、BinaryTree
-
+##### 1、tree
+&emsp;&emsp;tree 是用于模拟分层树结构的常用数据结构。<br>
+&emsp;&emsp;tree 的每个节点都有一个根值和一些指向其他节点的引用列表。从图表看，一棵树也可以被定义为一个有N个节点和N-1个边的有向无环图。
+##### 2、binary tree
+&emsp;&emsp;二叉树是最典型的树状结构之一。顾名思义，二叉树是一种树数据结构，其中每个节点最多有两个子节点，它们被称为(left child)左子节点和 (right child)右子节点。
 #### 六、BinarySearch
 
 
