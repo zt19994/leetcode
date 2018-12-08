@@ -20,6 +20,7 @@ public class ConnectTreeNode {
 
     /**
      * 循环
+     *
      * @param root
      */
     public void connect(TreeLinkNode root) {
@@ -42,18 +43,19 @@ public class ConnectTreeNode {
 
     /**
      * 迭代
+     *
      * @param root
      */
     public void connect1(TreeLinkNode root) {
-        if(root == null) return;
-        connect(root.left,root.right);
+        if (root == null) return;
+        connect(root.left, root.right);
         connect(root.right, root.next);
     }
 
-    private void connect(TreeLinkNode node, TreeLinkNode next){
-        if(node == null) return;
+    private void connect(TreeLinkNode node, TreeLinkNode next) {
+        if (node == null) return;
         node.next = next;
         connect(node.left, node.right);
-        connect(node.right, next != null? next.left:null);
+        connect(node.right, next != null ? next.left : null);
     }
 }
