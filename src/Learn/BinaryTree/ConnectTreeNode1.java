@@ -20,7 +20,8 @@ public class ConnectTreeNode1 {
 
     public void connect(TreeLinkNode root) {
         for (TreeLinkNode head = root; head != null; ) {
-            TreeLinkNode nextHead = new TreeLinkNode(0), nextTail = nextHead;
+            TreeLinkNode nextHead = new TreeLinkNode(0);
+            TreeLinkNode nextTail = nextHead;
             for (TreeLinkNode node = head; node != null; node = node.next) {
                 if (node.left != null) {
                     nextTail.next = node.left;
@@ -35,6 +36,27 @@ public class ConnectTreeNode1 {
         }
     }
 
+    //和上面的算法差不多 思路是一样的
+    public void connect3(TreeLinkNode root) {
+        while (root != null) {
+            TreeLinkNode tempChild = new TreeLinkNode(0);
+            TreeLinkNode currentChild = tempChild;
+            while (root != null) {
+                if (root.left != null) {
+                    currentChild.next = root.left;
+                    currentChild = currentChild.next;
+                }
+                if (root.right != null) {
+                    currentChild.next = root.right;
+                    currentChild = currentChild.next;
+                }
+                root = root.next;   //同层间移动
+            }
+            root = tempChild.next;  //向下一层移动
+        }
+    }
+
+    //这个算法中 暂存下一层head的node只创建一次
     public void connect1(TreeLinkNode root) {
         TreeLinkNode dummyHead = new TreeLinkNode(0);
         TreeLinkNode pre = dummyHead;
@@ -48,6 +70,7 @@ public class ConnectTreeNode1 {
                 pre = pre.next;
             }
             root = root.next;
+            //相当于去掉了循环
             if (root == null) {
                 pre = dummyHead;
                 root = dummyHead.next;
@@ -57,6 +80,7 @@ public class ConnectTreeNode1 {
     }
 
 
+    //迭代的算法
     public void connect2(TreeLinkNode root) {
         if (root == null) return;
 
@@ -86,4 +110,6 @@ public class ConnectTreeNode1 {
         }
         return null;
     }
+
+
 }
