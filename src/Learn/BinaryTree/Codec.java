@@ -25,7 +25,7 @@ public class Codec {
      */
     public String serializa(TreeNode root) {
         if (root == null) {
-            return null;
+            return "";
         }
         Queue<TreeNode> q = new LinkedList<>();
         StringBuilder result = new StringBuilder();
@@ -47,14 +47,14 @@ public class Codec {
      * 反序列化 将字符串转化为二叉树
      */
     public TreeNode deserialize(String data) {
-        if (data == null) {
+        if (data == "") {
             return null;
         }
         Queue<TreeNode> q = new LinkedList<>();
         String[] values = data.split(" ");
         TreeNode root = new TreeNode(Integer.parseInt(values[0]));
         q.add(root);
-        for (int i = 0; i < values.length; i++) {
+        for (int i = 1; i < values.length; i++) {
             TreeNode parent = q.poll();
             if (!values[i].equals("n")) {
                 TreeNode left = new TreeNode(Integer.parseInt(values[i]));
