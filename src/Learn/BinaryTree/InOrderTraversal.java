@@ -48,7 +48,6 @@ public class InOrderTraversal {
     }
 
     //第三种 迭代
-
     public List<Integer> inorderTraversal3(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         if (root == null) return list;

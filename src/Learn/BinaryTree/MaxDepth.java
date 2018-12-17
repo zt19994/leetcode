@@ -23,7 +23,7 @@ public class MaxDepth {
 
 
     /**
-     * "Bottom-up" Solution
+     * "Bottom-up" Solution 自下而上
      *
      * @param root
      * @return
@@ -39,10 +39,10 @@ public class MaxDepth {
 
 
     /**
-     * "Top-down" Solution
+     * "Top-down" Solution 自上而下
      */
     // don't forget to initialize answer before call maximum_depth
-    private int answer;
+    private int answer = 0;
 
     private void maximum_depth(TreeNode root, int depth) {
         if (root == null) {

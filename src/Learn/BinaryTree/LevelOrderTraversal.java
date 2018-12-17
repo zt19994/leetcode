@@ -32,7 +32,7 @@ public class LevelOrderTraversal {
         int queueL = 0;
         while (!queue.isEmpty()) {
             List<Integer> list = new ArrayList<>();
-            queueL = queue.size();
+            queueL = queue.size();  //每层节点数
             for (int i = 0; i < queueL; i++) {
                 TreeNode current = queue.poll();
                 list.add(current.val);

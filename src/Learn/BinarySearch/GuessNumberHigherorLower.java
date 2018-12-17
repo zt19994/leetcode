@@ -1,6 +1,10 @@
 package Learn.BinarySearch;
 
+import org.junit.Test;
+
 /**
+ * 猜数字大小
+ *
  * @author zhongtao on 2018/8/27
  */
 public class GuessNumberHigherorLower {
@@ -38,5 +42,14 @@ public class GuessNumberHigherorLower {
             }
         }
         return i;
+    }
+
+    /**
+     * 测试
+     */
+    @Test
+    public void testGuessNumber(){
+        int i = guessNumber(6);
+        System.out.println(i);
     }
 }

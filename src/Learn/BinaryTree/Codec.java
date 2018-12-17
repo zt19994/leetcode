@@ -69,4 +69,42 @@ public class Codec {
         }
         return root;
     }
+
+
+    private StringBuilder sb = new StringBuilder();
+
+    public String serialize1(TreeNode root) {
+        sc(root);
+        sb.deleteCharAt(sb.length() - 1);
+        return sb.toString();
+    }
+
+    private void sc(TreeNode x) {
+        if (x == null) {
+            sb.append("#,");
+            return;
+        }
+        sb.append(x.val).append(",");
+        sc(x.left);
+        sc(x.right);
+    }
+
+    private String[] sx;
+    private int id;
+
+    public TreeNode deserialize1(String data) {
+        if (data.equals("#")) return null;
+        sx = data.split(",");
+        id = 0;
+        return dc();
+    }
+
+    private TreeNode dc() {
+        String cur = sx[id++];
+        if (cur.equals("#")) return null;
+        TreeNode x = new TreeNode(Integer.valueOf(cur));
+        x.left = dc();
+        x.right = dc();
+        return x;
+    }
 }
