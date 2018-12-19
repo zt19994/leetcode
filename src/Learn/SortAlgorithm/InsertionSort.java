@@ -66,8 +66,9 @@ public class InsertionSort {
                         //子序列进行插入排序
                         if (arr[k + j * dk] > arr[k + i * dk]) {
                             int tmp = arr[k + i * dk];
-                            for (int p = i; p > j; p--)
+                            for (int p = i; p > j; p--) {
                                 arr[k + p * dk] = arr[k + (p - 1) * dk];
+                            }
                             arr[k + j * dk] = tmp;
                         }
                     }
