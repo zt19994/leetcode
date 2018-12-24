@@ -1,8 +1,10 @@
 package Learn.SortAlgorithm;
 
+import org.junit.Test;
+
 /**
  * 插入排序
- * 1。直接插入排序
+ * 1.直接插入排序
  * 2.希尔排序
  *
  * @author zhongtao on 2018/12/18
@@ -10,30 +12,15 @@ package Learn.SortAlgorithm;
 public class InsertionSort {
 
     /**
-     * 直接排序
+     * 直接插入排序
+     * <p>
+     * 直接插入排序的算法思路：
+     * 1. 设置监视哨temp，将待插入记录的值赋值给temp；
+     * 2. 设置开始查找的位置j；
+     * 3. 在数组arr中进行搜索，搜索中将第j个记录后移，直至temp≥arr[j]为止；
+     * 4. 将temp插入arr[j+1]的位置上。
      */
-    public void straightLnsertionSort(double[] sorted) {
-        int sortedLen = sorted.length;
-        for (int j = 2; j < sortedLen; j++) {
-            if (sorted[j] < sorted[j - 1]) {
-                sorted[0] = sorted[j]; //保存一下
-                sorted[j] = sorted[j - 1]; //前面元素后移
-                int insertPos = 0;
-                for (int k = j - 2; k >= 0; k--) {
-                    if (sorted[k] > sorted[0]) {
-                        sorted[k + 1] = sorted[k];
-                    } else {
-                        insertPos = k + 1;
-                        break;
-                    }
-                }
-                sorted[insertPos] = sorted[0];
-            }
-        }
-    }
-
-    //直接插入排序
-    public static void insertSort(int[] arr) {
+    public void insertSort(int[] arr) {
         //外层循环确定待比较数值
         //必须i=1，因为开始从第二个数与第一个数进行比较
         for (int i = 1; i < arr.length; i++) {
@@ -54,31 +41,67 @@ public class InsertionSort {
 
     /**
      * 希尔排序
+     * <p>
+     * 按下标的一定增量分组然后进行插入排序
      */
-    public void shellInsertionSort(int[] arr) {
-        //dk是步长
-        int dk = arr.length;
-        while (dk != 1) {
+    public void shellSort1(int[] arr) {
+        //d是步长
+        int d = arr.length;
+        while (d > 1) {
             //刚开始选择长度的一半作为步长，每次减少一半
-            dk = dk / 2;
-            //k是每个子序列的第一个元素的下标
-            for (int k = 0; k <= dk; k++) {
+            d = d / 2;
+            //x是每个子序列的第一个元素的下标
+            for (int x = 0; x <= d; x++) {
                 //通过改变i来改变倍数，确定下标
-                for (int i = 1; k + i * dk < arr.length; i++) {
+                for (int i = 1; x + i * d < arr.length; i++) {
                     //j是子序列中，小于i的所有下标
                     for (int j = 0; j < i; j++) {
                         //子序列进行插入排序
-                        if (arr[k + j * dk] > arr[k + i * dk]) {
-                            int tmp = arr[k + i * dk];
+                        if (arr[x + j * d] > arr[x + i * d]) {
+                            int tmp = arr[x + i * d];
                             for (int p = i; p > j; p--) {
-                                arr[k + p * dk] = arr[k + (p - 1) * dk];
+                                arr[x + p * d] = arr[x + (p - 1) * d];
                             }
-                            arr[k + j * dk] = tmp;
+                            arr[x + j * d] = tmp;
                         }
                     }
                 }
             }
         }
+    }
+
+    //希尔排序
+    public void shellSort2(int[] arr) {
+        int d = arr.length;
+        while (d >= 1) {
+            d = d / 2;
+            for (int x = 0; x < d; x++) {
+                //按下标的一定增量分组然后进行插入排序
+                for (int i = x + d; i < arr.length; i = i + d) {
+                    int temp = arr[i];
+                    int j;
+                    for (j = i - d; j >= 0 && arr[j] > temp; j = j - d) {
+                        //移动下标
+                        arr[j + d] = arr[j];
+                    }
+                    arr[j + d] = temp;
+                }
+            }
+        }
+    }
+
+
+    /**
+     * 测试
+     */
+    @Test
+    public void testInsertSort() {
+        int[] nums = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1};
+        shellSort1(nums);
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
     }
 
 }
