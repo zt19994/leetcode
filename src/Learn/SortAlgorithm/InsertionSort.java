@@ -1,5 +1,6 @@
 package Learn.SortAlgorithm;
 
+
 import org.junit.Test;
 
 /**
@@ -92,10 +93,24 @@ public class InsertionSort {
 
 
     /**
-     * 测试
+     * 测试直接插入排序
      */
     @Test
     public void testInsertSort() {
+        int[] nums = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1};
+        insertSort(nums);
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
+
+    /**
+     * 测试希尔排序
+     */
+    @Test
+    public void testShellSort() {
         int[] nums = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1};
         shellSort1(nums);
         for (int num : nums) {
