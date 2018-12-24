@@ -53,7 +53,7 @@ public class SearchRange {
      * 测试
      */
     @Test
-    public void test() {
+    public void testSearchRange() {
         int[] nums = {5,7,7,8,8,10};
         int[] ints = searchRange(nums, 8);
         for (int anInt : ints) {

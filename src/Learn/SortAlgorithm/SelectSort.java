@@ -2,11 +2,16 @@ package Learn.SortAlgorithm;
 
 /**
  * 选择排序
+ * 1. 简单选择排序
+ * 2. 堆排序
  *
  * @author zhongtao on 2018/12/20
  */
 public class SelectSort {
 
+    /**
+     * 简单选择排序
+     */
     public void selectSort(int[] arr) {
         int minIndex = 0;
         int temp;
