@@ -37,10 +37,7 @@ public class SelectSort {
      * 堆排序
      */
     public void heapSort(int[] arr) {
-        //循环建立初始堆
-        for (int i = arr.length / 2; i >= 0; i--) {
-            heapAdjust(arr, i, arr.length - 1);
-        }
+        buildMaxHeap(arr);
 
         //进行n-1次循环，完成排序
         for (int i = arr.length - 1; i > 0; i--) {
@@ -53,11 +50,25 @@ public class SelectSort {
         }
     }
 
+
+    /**
+     * 构建大顶堆
+     * <p>
+     * 将数组中最大的值放在根节点
+     */
+    private void buildMaxHeap(int[] arr) {
+        for (int i = arr.length / 2; i >= 0; i--) {
+            heapAdjust(arr, i, arr.length - 1);
+        }
+    }
+
     /**
      * 堆调整
+     * <p>
+     * 将数组中最大的值放在根节点
      *
      * @param arr    待排序数组
-     * @param parent 父节点
+     * @param parent 父节点索引
      * @param length 数组长度
      */
     private void heapAdjust(int[] arr, int parent, int length) {
@@ -80,34 +91,6 @@ public class SelectSort {
             child = 2 * child + 1;
         }
         arr[parent] = temp;
-    }
-
-
-    public void buildMInHeap(int[] arr) {
-        for (int i = arr.length - 1; i > 0; i--) {
-            for (int j = (i - 1) / 2; j >= 0; j--) {
-                //i是奇数，存在一个节点只有一个叶子节点
-                if ((2 * j + 1 == i) && (i % 2 != 0)) {
-                    if (arr[j] < arr[2 * j + 1]) {
-                        swap(arr, j, 2 * j + 1);
-                    }
-                } else {
-                    if (arr[j] < arr[2 * j + 1]) {
-                        swap(arr, j, 2 * j + 1);
-                    }
-                    if (arr[j] < arr[2 * j + 2]) {
-                        swap(arr, j, 2 * j + 2);
-                    }
-                }
-            }
-            swap(arr, 0, i);
-        }
-    }
-
-    private void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
     }
 
 

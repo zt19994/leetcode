@@ -50,7 +50,7 @@ public class SearchRange {
     }
 
     /**
-     * 测试
+     * 测试搜索范围
      */
     @Test
     public void testSearchRange() {
