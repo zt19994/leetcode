@@ -45,7 +45,27 @@ public class InsertionSort {
      * <p>
      * 按下标的一定增量分组然后进行插入排序
      */
-    public void shellSort1(int[] arr) {
+    public void shellSort(int[] arr) {
+        int d = arr.length;
+        while (d >= 1) {
+            d = d / 2;
+            for (int x = 0; x < d; x++) {
+                //按下标的一定增量分组然后进行插入排序
+                for (int i = x + d; i < arr.length; i = i + d) {
+                    int temp = arr[i];
+                    int j;
+                    for (j = i - d; j >= 0 && arr[j] > temp; j = j - d) {
+                        //移动下标
+                        arr[j + d] = arr[j];
+                    }
+                    arr[j + d] = temp;
+                }
+            }
+        }
+    }
+
+    //希尔排序
+    public void shellSort2(int[] arr) {
         //d是步长
         int d = arr.length;
         while (d > 1) {
@@ -66,26 +86,6 @@ public class InsertionSort {
                             arr[x + j * d] = tmp;
                         }
                     }
-                }
-            }
-        }
-    }
-
-    //希尔排序
-    public void shellSort2(int[] arr) {
-        int d = arr.length;
-        while (d >= 1) {
-            d = d / 2;
-            for (int x = 0; x < d; x++) {
-                //按下标的一定增量分组然后进行插入排序
-                for (int i = x + d; i < arr.length; i = i + d) {
-                    int temp = arr[i];
-                    int j;
-                    for (j = i - d; j >= 0 && arr[j] > temp; j = j - d) {
-                        //移动下标
-                        arr[j + d] = arr[j];
-                    }
-                    arr[j + d] = temp;
                 }
             }
         }
@@ -112,7 +112,7 @@ public class InsertionSort {
     @Test
     public void testShellSort() {
         int[] nums = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1};
-        shellSort1(nums);
+        shellSort(nums);
         for (int num : nums) {
             System.out.print(num + " ");
         }

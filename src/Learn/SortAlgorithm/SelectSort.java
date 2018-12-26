@@ -17,7 +17,7 @@ public class SelectSort {
     public void selectSort(int[] arr) {
         int minIndex = 0;
         int temp;
-        for (int i = 0; i < arr.length - 1; i++) {
+        for (int i = 0; i < arr.length; i++) {
             minIndex = i;
             for (int j = i + 1; j < arr.length; j++) {
                 // 找到当前循环最小值索引
