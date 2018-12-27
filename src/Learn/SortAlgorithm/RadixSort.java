@@ -17,9 +17,11 @@ public class RadixSort {
     public void radixSort(int[] arr) {
         int max = getMax(arr);  // 数组arr中的最大值
 
-        for (int exp = 1; max / exp > 0; exp *= 10)
+        for (int exp = 1; max / exp > 0; exp *= 10) {
             //从个位开始，对数组arr按"exp指数"进行排序
-            countSort(arr, exp);
+            //countSort(arr, exp);
+            bucketSort(arr, exp);
+        }
     }
 
     /**
@@ -54,7 +56,7 @@ public class RadixSort {
             buckets[(arr[i] / exp) % 10]++;
         }
 
-        // 更改buckets[i] 目的是让更改后的buckets[i]的值，是该数据在temp[]中的位置。
+        // 计算数据在temp[]中的位置 0 1 2 2 3 --> 0 1 3 5 8
         for (int i = 1; i < 10; i++) {
             buckets[i] += buckets[i - 1];
         }
@@ -73,6 +75,27 @@ public class RadixSort {
 
 
     /**
+     * 桶排序
+     */
+    private void bucketSort(int[] arr, int exp) {
+        int[][] buckets = new int[10][arr.length];   //这是二维数组组成的桶
+        int[] counter = new int[10];    //此数组用来记录0-9每个桶中的数字个数，计数器
+        for (int i = 0; i < arr.length; i++) {
+            int index = (arr[i] / exp) % 10;    //得出相应位置（如个位、十位）上的数字
+            buckets[index][counter[index]] = arr[i];   //取出来放到桶里
+            counter[index]++;   //相应的计数器加1
+        }
+
+        int position = 0;
+        //合并桶
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < counter[i]; j++) {
+                arr[position++] = buckets[i][j];
+            }
+        }
+    }
+
+    /**
      * 测试基数排序
      */
     @Test
@@ -84,5 +107,4 @@ public class RadixSort {
         }
         System.out.println();
     }
-
 }
