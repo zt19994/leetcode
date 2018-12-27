@@ -13,6 +13,11 @@ public class SelectSort {
 
     /**
      * 简单选择排序
+     * <p>
+     * 简单选择排序的算法思路：
+     * 1. 首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置
+     * 2. 再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾
+     * 3. 以此类推，直到所有元素均排序完毕。
      */
     public void selectSort(int[] arr) {
         int minIndex = 0;
@@ -35,6 +40,11 @@ public class SelectSort {
 
     /**
      * 堆排序
+     * <p>
+     * 堆排序的算法思路：
+     * 1. 最大堆调整（Max Heapify）：将堆的末端子节点作调整，某个节点的值最多和其父节点的值一样大；
+     * 2. 创建最大堆（Build Max Heap）：将堆中的所有数据重新排序,堆中的最大元素存放在根节点中；
+     * 3. 堆排序（HeapSort）：移除位在第一个数据的根节点，并做最大堆调整的递归运算。
      */
     public void heapSort(int[] arr) {
         buildMaxHeap(arr);

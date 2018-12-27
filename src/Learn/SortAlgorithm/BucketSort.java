@@ -14,6 +14,13 @@ public class BucketSort {
 
     /**
      * 桶排序
+     * <p>
+     * 桶排序的算法思路：
+     * 1. 找出待排序数组中的最大值max和最小值min；
+     * 2. 我们使用动态数组ArrayList 作为桶，桶里放的元素也用 ArrayList 存储。桶的数量为 (max-min) / arr.length + 1；
+     * 3. 遍历数组 arr，计算每个元素 arr[i] 放的桶；
+     * 4. 每个桶各自排序；
+     * 5. 遍历桶数组，把排序好的元素放进输出数组。
      *
      * @param arr 待排序数组
      */

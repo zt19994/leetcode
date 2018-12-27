@@ -11,6 +11,12 @@ public class CountSort {
 
     /**
      * 计数排序
+     * <p>
+     * 计数排序的算法思路：
+     * 1. 求出待排序数组的最大值 max 和最小值 min。
+     * 2. 实例化辅助计数数组temp，temp数组中每个下标对应arr中的一个元素，temp用来记录每个元素出现的次数。
+     * 3. 计算 arr 中每个元素在temp中的位置 position = arr[i] - min。
+     * 4. 根据 temp 数组求得排序后的数组。
      */
     public void countSort(int[] arr) {
         if (arr == null || arr.length == 0) {
