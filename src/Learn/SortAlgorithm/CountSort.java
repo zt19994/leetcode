@@ -26,7 +26,7 @@ public class CountSort {
             min = Math.min(min, arr[i]);
         }
 
-        int temp[] = new int[max];
+        int[] temp = new int[max];
 
         //找出每个数字出现的次数
         for (int i = 0; i < arr.length; i++) {
