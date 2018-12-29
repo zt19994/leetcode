@@ -36,7 +36,6 @@ Thumbs.db
 
 ml
 
-*/**/activemq-data/
 */**/*.~vsd
 .settings/
 .project
@@ -50,13 +49,6 @@ build
 ~/
 rebel.xml
 
-qqconnect.log
-generatorConfig.xml
-generator.properties
-
-kstore_mobile_site/src/main/resources/com/ningpai/web/config/log4j.properties
-kstore_newthird_site/src/main/resources/com/ningpai/web/config/jdbc.properties
-kstore_newthird_site/src/main/resources/com/ningpai/web/config/jdbc.properties
 
 
 

@@ -39,8 +39,8 @@ public class FindPeakElement {
      * 测试
      */
     @Test
-    public void test(){
-        int[] nums = {1,2,1,3,5,6,4};
+    public void test() {
+        int[] nums = {1, 2, 1, 3, 5, 6, 4};
         System.out.println(findPeakElement(nums));
     }
 }
