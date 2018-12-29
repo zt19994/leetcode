@@ -4,6 +4,8 @@ import org.junit.Test;
 
 /**
  * 给定一个按升序排序的整数数组，查找给定目标值的起始和结束位置。
+ * 算法的运行时复杂度必须是O(log n)的顺序。
+ * 如果在数组中没有找到目标，返回[-1，-1]。
  * <p>
  * Input: nums = [5,7,7,8,8,10], target = 8
  * Output: [3,4]
@@ -15,6 +17,9 @@ import org.junit.Test;
  */
 public class SearchRange {
 
+    /**
+     * 搜索范围
+     */
     public int[] searchRange(int[] nums, int target) {
         if (nums.length == 0) {
             return new int[]{-1, -1};
@@ -23,30 +28,33 @@ public class SearchRange {
         if (nums[left] != target) {
             return new int[]{-1, -1};
         }
-        int left_1 = searchEqualOrGreater(nums, target + 1);
-        int right = -1;
-        if (nums[left_1] >= target + 1) {
-            right = left_1 - 1;
+        int left1 = searchEqualOrGreater(nums, target + 1);
+        int right;
+        if (nums[left1] >= target + 1) {
+            right = left1 - 1;
         } else {
-            right = left_1;
+            right = left1;
         }
         return new int[]{left, right};
     }
 
+    /**
+     * 搜索大于或者等于目标值
+     */
     public int searchEqualOrGreater(int[] nums, int target) {
-        int lo = 0;
-        int hi = nums.length - 1;
-        while (lo < hi) {
-            //mid is always biased towards left
-            int mid = lo + (hi - lo) / 2;
+        int low = 0;
+        int high = nums.length - 1;
+        while (low < high) {
+            //mid 总是偏向左边
+            int mid = low + (high - low) / 2;
             if (nums[mid] < target) {
-                lo = mid + 1;
+                low = mid + 1;
             } else {
-                //we want to move hi to the left
-                hi = mid;
+                //将hi移动到左边
+                high = mid;
             }
         }
-        return lo;
+        return low;
     }
 
     /**
@@ -54,10 +62,11 @@ public class SearchRange {
      */
     @Test
     public void testSearchRange() {
-        int[] nums = {5,7,7,8,8,10};
+        int[] nums = {5, 7, 7, 8, 8, 8, 8, 10};
         int[] ints = searchRange(nums, 8);
         for (int anInt : ints) {
-            System.out.println(anInt);
+            System.out.print(anInt + " ");
         }
+        System.out.println();
     }
 }
