@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * 前序遍历二叉树  根节点-->左子树-->右子树
+ * 前序遍历二叉树 深度优先遍历 根节点-->左子树-->右子树
  *
  * @author zhongtao on 2018/8/16
  */

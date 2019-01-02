@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class PreInBuildTree {
 
-     class TreeNode {
+    class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -81,8 +81,8 @@ public class PreInBuildTree {
         return dfs(preorder, inorder, null);
     }
 
-    public TreeNode dfs(int[] preorder, int[] inorder, TreeNode end){
-        if(inIndex > inorder.length - 1 || (end != null && end.val == inorder[inIndex])){
+    public TreeNode dfs(int[] preorder, int[] inorder, TreeNode end) {
+        if (inIndex > inorder.length - 1 || (end != null && end.val == inorder[inIndex])) {
             return null;
         }
 

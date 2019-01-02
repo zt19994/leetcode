@@ -22,6 +22,9 @@ public class LevelOrderTraversal {
         }
     }
 
+    /**
+     * 层级遍历 广度优先搜索
+     */
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> lists = new ArrayList<List<Integer>>();
         if (root == null) {
