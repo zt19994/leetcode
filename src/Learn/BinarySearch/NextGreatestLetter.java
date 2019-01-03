@@ -12,7 +12,7 @@ public class NextGreatestLetter {
     public char nextGreatestLetter(char[] letters, char target) {
         int n = letters.length;
 
-        //hi以“n”开头，而不是通常的“n - 1”。因为循环条件是‘lo < hi’，如果hi从‘n - 1’开始，我们永远不能考虑索引n - 1处的值
+        //hi以n开头，而不是通常的n - 1。因为循环条件是lo < hi，如果hi从n - 1开始，我们永远不能考虑索引n - 1处的值
         int lo = 0, hi = n;
 
         //循环条件是'lo < hi', 避免target值小于第一个元素
