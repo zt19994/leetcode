@@ -28,13 +28,12 @@ public class MergeSort {
      * @param right 结束位置
      */
     private void sort(int[] arr, int[] temp, int left, int right) {
-        if (left >= right) {
-            return;
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+            sort(arr, temp, left, mid);
+            sort(arr, temp, mid + 1, right);
+            merge(arr, temp, left, mid, right);
         }
-        int mid = left + (right - left) / 2;
-        sort(arr, temp, left, mid);
-        sort(arr, temp, mid + 1, right);
-        merge(arr, temp, left, mid, right);
     }
 
     /**

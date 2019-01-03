@@ -61,7 +61,7 @@ public class RadixSort {
             buckets[(arr[i] / exp) % 10]++;
         }
 
-        // 计算数据在temp[]中的位置 0 1 2 2 3 --> 0 1 3 5 8
+        // 计算数据在temp[]中的位置 0 1 2 2 3 --> 1 2 3 5 8
         for (int i = 1; i < 10; i++) {
             buckets[i] += buckets[i - 1];
         }

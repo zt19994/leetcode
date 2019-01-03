@@ -20,17 +20,15 @@ public class SelectSort {
      * 3. 以此类推，直到所有元素均排序完毕。
      */
     public void selectSort(int[] arr) {
-        int minIndex = 0;
-        int temp;
         for (int i = 0; i < arr.length; i++) {
-            minIndex = i;
+            int minIndex = i;
             for (int j = i + 1; j < arr.length; j++) {
                 // 找到当前循环最小值索引
                 if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 }
             }
-            temp = arr[i];
+            int temp = arr[i];
             // 交换当前循环起点值和最小值索引位置的值
             arr[i] = arr[minIndex];
             arr[minIndex] = temp;

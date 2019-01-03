@@ -54,10 +54,10 @@ public class InsertionSort {
             d = d / 2;
             for (int x = 0; x < d; x++) {
                 //按下标的一定增量分组然后进行插入排序
-                for (int i = x + d; i < arr.length; i = i + d) {
+                for (int i = x + d; i < arr.length; i += d) {
                     int temp = arr[i];
                     int j;
-                    for (j = i - d; j >= 0 && arr[j] > temp; j = j - d) {
+                    for (j = i - d; j >= 0 && arr[j] > temp; j -= d) {
                         //移动下标
                         arr[j + d] = arr[j];
                     }
