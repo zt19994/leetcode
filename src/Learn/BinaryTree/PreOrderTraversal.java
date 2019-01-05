@@ -1,6 +1,7 @@
 package Learn.BinaryTree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -53,17 +54,16 @@ public class PreOrderTraversal {
      * 使用stack LIFO
      */
     public List<Integer> preorderTraversal3(TreeNode root) {
-        List<Integer> ans = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         while (!stack.isEmpty()) {
             TreeNode current = stack.pop();
-            if (current == null)
-                continue;
-            ans.add(current.val);
+            if (current == null) continue;
+            list.add(current.val);
             stack.push(current.right);
             stack.push(current.left);
         }
-        return ans;
+        return list;
     }
 }
