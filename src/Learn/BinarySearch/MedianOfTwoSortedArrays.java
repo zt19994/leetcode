@@ -21,14 +21,28 @@ import org.junit.Test;
  */
 public class MedianOfTwoSortedArrays {
 
+    /**
+     * 两个排序数组的中值
+     */
     public double findMedianSortedArrays(int[] A, int[] B) {
-        int m = A.length, n = B.length;
-        int l = (m + n + 1) / 2;
-        int r = (m + n + 2) / 2;
-        return (getkth(A, 0, B, 0, l) + getkth(A, 0, B, 0, r)) / 2.0;
+        int m = A.length;
+        int n = B.length;
+        int left = (m + n + 1) / 2;
+        int right = (m + n + 2) / 2;
+        return (getMid(A, 0, B, 0, left) + getMid(A, 0, B, 0, right)) / 2.0;
     }
 
-    public double getkth(int[] A, int aStart, int[] B, int bStart, int k) {
+    /**
+     * 获取中间值
+     *
+     * @param A
+     * @param aStart
+     * @param B
+     * @param bStart
+     * @param k
+     * @return
+     */
+    public double getMid(int[] A, int aStart, int[] B, int bStart, int k) {
         if (aStart > A.length - 1) {
             return B[bStart + k - 1];
         }
@@ -38,7 +52,8 @@ public class MedianOfTwoSortedArrays {
         if (k == 1) {
             return Math.min(A[aStart], B[bStart]);
         }
-        int aMid = Integer.MAX_VALUE, bMid = Integer.MAX_VALUE;
+        int aMid = Integer.MAX_VALUE;
+        int bMid = Integer.MAX_VALUE;
         if (aStart + k / 2 - 1 < A.length) {
             aMid = A[aStart + k / 2 - 1];
         }
@@ -47,12 +62,55 @@ public class MedianOfTwoSortedArrays {
         }
 
         if (aMid < bMid) {
-            return getkth(A, aStart + k / 2, B, bStart, k - k / 2);// Check: aRight + bLeft
+            return getMid(A, aStart + k / 2, B, bStart, k - k / 2);// Check: aRight + bLeft
         } else {
-            return getkth(A, aStart, B, bStart + k / 2, k - k / 2);// Check: bRight + aLeft
+            return getMid(A, aStart, B, bStart + k / 2, k - k / 2);// Check: bRight + aLeft
         }
     }
 
+
+    /**
+     * 合并两个数组，再进行计算
+     */
+    public static double findMedianSortedArrays1(int[] nums1, int[] nums2) {
+        int[] mergedArrays = merge(nums1, nums2);
+
+        int mid = mergedArrays.length / 2;
+
+        if (mergedArrays.length % 2 == 0) {
+            double left = (double) mergedArrays[mid - 1];
+            double right = (double) mergedArrays[mid];
+            return (left + right) / 2.0;
+        } else {
+            return mergedArrays[mid];
+        }
+
+    }
+
+    /**
+     * 合并数组
+     */
+    private static int[] merge(int[] sorted1, int[] sorted2) {
+        int c1 = 0;
+        int c2 = 0;
+        int index = 0;
+        int sum = sorted1.length + sorted2.length;
+        int[] merged = new int[sum];
+        while (c1 < sorted1.length && c2 < sorted2.length) {
+            if (sorted1[c1] <= sorted2[c2]) {
+                merged[index++] = sorted1[c1++];
+            } else {
+                merged[index++] = sorted2[c2++];
+            }
+        }
+        while (c1 < sorted1.length) {
+            merged[index++] = sorted1[c1++];
+        }
+        while (c2 < sorted2.length) {
+            merged[index++] = sorted2[c2++];
+        }
+        return merged;
+    }
 
     /**
      * 测试
@@ -61,6 +119,6 @@ public class MedianOfTwoSortedArrays {
     public void test() {
         int[] nums1 = {1, 2};
         int[] nums2 = {3, 4};
-        System.out.println(findMedianSortedArrays(nums1, nums2));
+        System.out.println(findMedianSortedArrays1(nums1, nums2));
     }
 }
