@@ -42,7 +42,7 @@ public class ReverseLinkedList {
      * 测试反转链表
      */
     @Test
-    public void test(){
+    public void test() {
         ListNode listNode = new ListNode(1);
         listNode.next = new ListNode(2);
         listNode.next.next = new ListNode(3);
@@ -53,7 +53,7 @@ public class ReverseLinkedList {
 
         ListNode reverseList = reverseList(listNode);
 
-        while (reverseList!=null){
+        while (reverseList != null) {
             System.out.print(reverseList.val + " ");
             reverseList = reverseList.next;
         }

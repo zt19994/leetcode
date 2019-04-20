@@ -6,6 +6,9 @@ import java.util.Stack;
 
 /**
  * 递归树的最大深度
+ * 给定一个二叉树，求它的最大深度。
+ * 最大深度是从根节点到最远叶节点的最长路径上的节点数。
+ * 注意:叶子是没有子节点的节点。
  *
  * @author zhongtao on 2018/8/17
  */
@@ -96,21 +99,21 @@ public class MaxDepth {
      * @return
      */
     private int maxDepthBFS(TreeNode root) {
-        if (root==null){
+        if (root == null) {
             return 0;
         }
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         int count = 0;
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             int size = queue.size();
             //队列长度大于0
-            while (size-- > 0){
+            while (size-- > 0) {
                 TreeNode current = queue.poll();
-                if (current.left!=null){
+                if (current.left != null) {
                     queue.offer(current.left);
                 }
-                if (current.right!=null){
+                if (current.right != null) {
                     queue.offer(current.right);
                 }
             }
