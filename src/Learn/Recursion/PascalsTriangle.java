@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author zt1994 2019/2/11 12:15
  */
-public class PascalTriangle {
+public class PascalsTriangle {
 
     /**
      * 使用递归方法求解
